@@ -43,6 +43,19 @@ function App() {
    }
 
 
+   useEffect(()=>{
+     const notes = localStorage.getItem("notes");
+
+     if(notes && notes.length>0){
+      setNotes(notes);
+     }
+   },[]);
+
+   useEffect(()=>{
+       localStorage.setItem("notes",JSON.stringify(notes));
+
+   },[notes]);
+
    
   return (
 
