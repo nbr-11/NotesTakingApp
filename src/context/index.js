@@ -1,1 +1,2 @@
-export {NotesContext,NotesProvider,useNotes} from './NotesContext'
+export {NotesContext,NotesProvider,useNotes} from './NotesContext';
+export {ThemeContext,ThemeProvider,useTheme} from './ThemeContext';

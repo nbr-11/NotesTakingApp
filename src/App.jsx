@@ -1,17 +1,41 @@
-import { useState } from 'react'
-import { useNotes,NotesProvider} from './context'
+import { useEffect, useState } from 'react'
+import { useNotes,NotesProvider, ThemeProvider} from './context'
 import './App.css'
+import { Outlet } from 'react-router-dom';
+import { Header, Navbar } from './Components';
+import Layout from './Layout';
+
 
 function App() {
   
-   const[notes,setNotes] = useState([]);
+
+  //implementing the themeMode context
+
+   const[themeMode,setThemeMode] = useState("light");
    
+   const lightTheme = ()=>{
+    setThemeMode("light");
+   }
+   const darkTheme = ()=>{
+    setThemeMode("dark");
+   }
+
+   useEffect(()=>{
+          document.querySelector('html').classList.remove('light','dark');
+          document.querySelector('html').classList.add(themeMode);
+   },[themeMode])
+
+  //  implementing the notes context
+
+   const[notes,setNotes] = useState([]);
+
    const addNotes = (note)=>{
          setNotes((prevnotes)=>([{id:Date.now(),...note},...prevnotes]))
    } 
 
    const updateNotes = (id,note)=>{
-    setNotes((prevnotes)=>prevnotes.map((prevnote)=>(prevnote.id === id?{...note,edited:Date.now()}:prevnote)))
+    const date = new Date();
+    setNotes((prevnotes)=>prevnotes.map((prevnote)=>((prevnote.id === id)?{...note,edited:`${date.getMonth()} ${date.getdate()} ${date.getFullYear()}`}:prevnote)))
    }
 
    const deleteNotes = (id) =>{
@@ -21,9 +45,18 @@ function App() {
 
    
   return (
-    <NotesProvider value={{notes,addNotes,updateNotes,deleteNotes}}>
-    
-    </NotesProvider>
+
+    <>
+      <ThemeProvider value={{themeMode,lightTheme,darkTheme}}>
+             <NotesProvider value={{notes,addNotes,updateNotes,deleteNotes}}>
+                        
+             <Layout></Layout>
+
+              </NotesProvider>
+      </ThemeProvider>
+       
+   
+    </>
   )
 }
 
