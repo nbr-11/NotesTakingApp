@@ -37,7 +37,7 @@ function Header() {
     },[isDark])
 
     return (
-        <div className='w-[100vw] h-[70px] bg-slate-100 dark:bg-slate-700 flex flex-row items-center justify-between relative px-2'>
+        <div className='w-[100vw] h-[70px] bg-slate-100 dark:bg-slate-900 flex flex-row items-center justify-between relative px-2'>
 
             <div className='w-fit flex flex-row gap-3'>
 
@@ -51,7 +51,7 @@ function Header() {
 
                 <div className='flex flex-row gap-2'>
                     <img src={logo} alt="" />
-                    <p className='text-2xl dark:text-white flex flex-row items-center'>Notes</p>
+                    <p className='hidden sm:flex sm:text-2xl dark:text-white  flex-row items-center'>Notes</p>
                 </div>
 
 
