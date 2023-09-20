@@ -11,7 +11,7 @@ function App() {
 
   //implementing the themeMode context
 
-   const[themeMode,setThemeMode] = useState("light");
+   const[themeMode,setThemeMode] = useState("dark");
    
    const lightTheme = ()=>{
     setThemeMode("light");
@@ -63,7 +63,7 @@ function App() {
       <ThemeProvider value={{themeMode,lightTheme,darkTheme}}>
              <NotesProvider value={{notes,addNotes,updateNotes,deleteNotes}}>
                         
-             <Layout></Layout>
+              <Layout></Layout>
 
               </NotesProvider>
       </ThemeProvider>
