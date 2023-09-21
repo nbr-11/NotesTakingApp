@@ -1,15 +1,16 @@
 import { createContext,useContext } from "react";
 
 export const TrashContext = createContext({
-    notes:[
+    trashNotes:[
         {   id:1,
             title:"Intro",
             content: `Hello everyone this is Nishant`,
             edited: "",
         }
     ],
-    deleteFromTrash:()=>{},
-    restoreToNotes:()=>{},
+    addToTrash:(note)=>{},
+    deleteFromTrash:(id)=>{},
+    restoreToNotes:(id)=>{},
 
 });
 

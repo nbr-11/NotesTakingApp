@@ -10,7 +10,7 @@ export const NotesContext = createContext({
     ],
     addNotes:(Note)=>{},
     updateNotes:(id,note)=>{},
-    deleteNodes:(id)=>{},
+    deleteNotes:(id)=>{},
     
 });
 

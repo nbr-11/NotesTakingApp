@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom'
 
 function Layout() {
   return (
-    <div className='flex flex-col w-screen h-screen overflow-x-hidden relative'>
+    <div className='flex flex-col w-screen h-screen overflow-hidden fixed'>
        <Header/>
       
-      <div className='h-full flex flex-row justify-between relative'>
+      <div className=" h-full w-full  flex flex-row justify-between">
        <Navbar></Navbar>
        <Outlet></Outlet>
 

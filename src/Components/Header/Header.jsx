@@ -37,7 +37,7 @@ function Header() {
     },[isDark])
 
     return (
-        <div className='w-[100vw] h-[70px] bg-slate-100 dark:bg-slate-900 flex flex-row items-center justify-between relative px-2'>
+        <div className='w-[100vw] h-fit bg-slate-100 dark:bg-slate-900 flex flex-row items-center justify-between relative px-2'>
 
             <div className='w-fit flex flex-row gap-3'>
 
@@ -57,14 +57,14 @@ function Header() {
 
             </div>
             
-            <div className={`absolute flex-row bg-white h-[80%] px-2 items-center rounded-lg w-[60%] justify-between ${isSearchVisible?"flex":"hidden"}`}>
-            <form action="" className='h-[80%] flex flex-row bg-white items-center gap-2 w-[90%]'>
+            <div className={`absolute flex-row bg-white h-[100%] px-2 items-center rounded-lg w-[60%] justify-between ${isSearchVisible?"flex":"hidden"}`}>
+            <form action="" className='h-[100%] flex flex-row bg-white items-center gap-2 w-[90%]'>
                 <img src={search} alt="" width={25} height={25} className='w-[20px] h-[20px]' />
                 <input type="text" className="w-[90%] h-[100%] p-1" placeholder='Search your notes' />
                 
             </form>
 
-            <div className='h-[80%]'>
+            <div className='h-[100%]'>
             <button onClick={closeHandler} className="text-3xl ">x</button>
             </div>
             </div>
