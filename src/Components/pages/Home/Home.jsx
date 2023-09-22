@@ -26,7 +26,7 @@ function Home() {
     addNotes(note);
   }
   return (
-    <div className='dark:bg-slate-800 bg-white w-[100%] sm:[95%] flex flex-col items-center min-h-screen overflow-y-scroll overflow-x-hidden'>
+    <div className='dark:bg-slate-800 bg-slate-200 w-[100%] sm:[95%] flex flex-col items-center min-h-screen overflow-y-scroll overflow-x-hidden'>
       
         <div className='create-notes '>
 

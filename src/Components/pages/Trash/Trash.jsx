@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTheme, useTrash } from '../../../context'
 import Card from '../../Card/Card';
+import TrashCard from '../../TrashCard/TrashCard';
 
 function Trash() {
 
@@ -13,7 +14,9 @@ function Trash() {
                
 {/* this will contain all the notes saved on local storage */}
 
-{trashNotes.map((note)=>(<Card note={note}/>))}
+{/* {trashNotes.map((note)=>(<Card note={note}/>))} */}
+
+{trashNotes.map((note)=>(<TrashCard note={note}></TrashCard>))}
 
 </div>
 </div>
